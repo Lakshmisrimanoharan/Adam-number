@@ -1,0 +1,40 @@
+# Adam-number
+import java.util.*;
+import java.lang.Math;
+public class Main
+{
+	public static void main(String[] args) {
+		Scanner sc=new Scanner(System.in);
+		int n=sc.nextInt();
+		int temp=n;
+		int sq=n*n;
+		int rem_1,sum_1=0;
+		int rem_2,sum_2=0;
+		while(sq>0)
+		{
+		    rem_1=sq%10;
+		    sum_1=sum_1*10+rem_1;
+		    sq=sq/10;
+		}
+		double root=Math.sqrt(sum_1);
+		int root_val=(int)root;
+		while(root_val>0)
+		{
+		    rem_2=root_val%10;
+		    sum_2=sum_2*10+rem_2;
+		    root_val=root_val/10;
+		}
+		if(sum_2==temp)
+		{
+		    System.out.println(temp+" is an Adam number");
+		}
+		else
+		{
+		    System.out.println(temp+" Not an Adam number");
+		}
+	}
+}
+
+output:
+12
+12 is an adam number
